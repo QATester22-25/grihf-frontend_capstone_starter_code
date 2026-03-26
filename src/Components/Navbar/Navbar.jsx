@@ -1,7 +1,26 @@
 import React from 'react'
 import "./Navbar.css";                       
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+
+    function handleClick() {
+        const navLinks = document.querySelector(".nav__links");
+        const navIcon = document.querySelector(".nav__icon i");
+  
+        // Toggle the 'active' class on the navigation links
+        navLinks.classList.toggle("active");
+  
+        // Toggle the Font Awesome icons (bars and times)
+        if (navLinks.classList.contains("active")) {
+          navIcon.classList.remove("fa-bars");
+          navIcon.classList.add("fa-times");
+        } else {
+          navIcon.classList.remove("fa-times");
+          navIcon.classList.add("fa-bars");
+        }
+      }
+      
     return (
         <>
 <nav>
@@ -31,20 +50,20 @@ const Navbar = () => {
     </li>
 
     <li class="btn">
-      <a href="../Sign_Up/Sign_Up.html">
-        <button class="btn1">Sign Up</button>
-      </a>
+      <Link to="/SignUp">
+        <button class="btn1" onClick={handleClick}>SignUp</button>
+     </Link>
     </li>
-
     <li class="btn">
-      <a href="../Login/Login.html">
-        <button class="btn1">Login</button>
-      </a>
+      <Link to="/Login" >
+        <button class="btn1" onClick={handleClick}>Login</button>
+      </Link>
     </li>
   </ul>
 </nav>
 </>
     )
+  
 }
 
 export default Navbar
