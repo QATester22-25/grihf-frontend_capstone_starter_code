@@ -11,7 +11,7 @@ const SignUp = () => {
         <h1>Sign Up</h1>
       </div>
       <div className="signup-text1">
-        Already a member?  <span style={{ color: "#96a5b1" }}><Link to="/Login">Login</Link></span> 
+        Already a member?  <span style={{ color: "#96a5b1" }}><Link to="/Login">Login</Link> </span> 
       </div>
       <div className="signup-form"> 
         <form> 

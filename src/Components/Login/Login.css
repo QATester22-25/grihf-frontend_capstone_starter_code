@@ -1,55 +1,103 @@
-/* Styles for the main container */
 .container {
-    max-width: 900px; /* Maximum width of the container */
+    max-width: 500px; /* Set maximum width for the container */
+    height: 800px;
     margin: 0 auto; /* Center the container horizontally */
-    padding: 40px; /* Padding inside the container */
-    margin-top: 10%; /* Top margin of 10% */
+    padding: 40px; /* Add padding inside the container */
+    margin-top: 20%; /* Set top margin as a percentage of the viewport height */
+    margin-bottom: 20%;
+    overflow: hidden; /* Hide any overflowing content */
+    background-color: #d9e2e6;
+    color: rgb(158, 148, 148);
 }
+
 
 /* Styles for form groups */
 .form-group {
+   
     margin-bottom: 20px; /* Bottom margin for spacing between form groups */
 }
 
-/* Styles for form group labels */
 .form-group label {
-    display: block; /* Make labels display as block elements */
-    margin-bottom: 5px; /* Bottom margin for spacing below labels */
-    font-weight: bold; /* Bold text for labels */
+    display: block; /* Display labels as blocks */
+    margin-bottom: 5px; /* Add bottom margin to labels */
+    margin-left: 20px;
+    font-weight: normal; /* Set font weight to bold for labels */
 }
 
-/* Styles for form controls */
 .form-control {
-    width: 40%; /* Width of form controls */
-    padding: 8px; /* Padding inside form controls */
-    font-size: 16px; /* Font size of form controls */
-    border: 1px solid #ccc; /* Border around form controls */
-    border-radius: 4px; /* Border radius for rounded corners */
+    width: 80%; /* Set width of form controls */
+    padding: 10px 20px; /* Add padding inside form controls */
+    font-size:20px; /* Set font size */
+    margin-left: 20px;
+    border: 1px solid #4e4d4d; /* Add border with color */
+    border-radius: 4px; /* Add border radius for rounded corners */
+}
+
+.login-text{
+  grid-column: 1 / 4; /* Span across all three columns */
+  text-align: center; /* Center-align text */
+}
+
+.forgot-pass{
+    cursor: pointer;
+}
+
+.login-text1{
+  grid-column: -1 / 1; /* Span from second to third column from the end */
+    margin-right: 20px;
+    margin-top: -20px;
+    margin-bottom: 150px;
+    text-align: right; /* Right-align text */
+}
+
+.login-text h1 {
+    margin-bottom: 20px; /* Add bottom margin to the heading */
+    text-align: center; /* Center-align text */
+    color: #3c79a7; /* Set text color */
+    letter-spacing: .1em; /* Add letter-spacing between characters */
+}
+
+.login-text1 span {
+
+    font-weight: 600; /* Set font weight to bold */
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 /* Styles for button groups */
 .btn-group {
-    margin-top: .0001px; /* Top margin for spacing above button groups */
-    margin-bottom: 20px; /* Bottom margin for spacing below button groups */
+    margin-top: .0001px; /* Add a small top margin to button group */
+    margin-bottom: 20px; /* Add bottom margin to button group */
 }
 
-/* Styles for buttons */
+/* Styles for buttons in the signup form */
 .btn {
-    padding: 10px 20px; /* Padding inside buttons */
-    font-size: 16px; /* Font size of buttons */
-    border: none; /* No border for buttons */
-    border-radius: 4px; /* Border radius for rounded corners on buttons */
-    cursor: pointer; /* Cursor style on hover for buttons */
+    width: 90%;
+    padding: 15px 20px; /* Set padding for buttons */
+    font-size: 20px; /* Set font size for buttons */
+    margin-left: 20px;
+    margin-top: 10px; 
+    border: none; /* Remove button borders */
+    border-radius: 4px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
-/* Styles for primary buttons */
+/* Styles for primary button in the signup form */
 .btn-primary {
-    background-color: #007bff; /* Background color for primary buttons */
-    color: #fff; /* Text color for primary buttons */
+    background-color: #28965f; /* Set background color for primary button */
+    color: #fff; /* Set text color for primary button */
 }
 
-/* Styles for danger (red) buttons */
+/* Styles for danger button in the signup form */
 .btn-danger {
-    background-color: #dc3545; /* Background color for danger buttons */
-    color: #fff; /* Text color for danger buttons */
+    margin-top: 10px;
+    background-color: #a80f0f; /* Set background color for danger button */
+    color: #fff; /* Set text color for danger button */
+}
+
+.btn-primary:hover{
+   background-color: #127242;
+}
+
+.btn-danger:hover {
+  background-color: #7e0808;
 }

@@ -4,7 +4,7 @@
     height: 800px;
     margin: 0 auto; /* Center the container horizontally */
     padding: 40px; /* Add padding inside the container */
-    margin-top: 10%; /* Set top margin as a percentage of the viewport height */
+    margin-top: 20%; /* Set top margin as a percentage of the viewport height */
     margin-bottom: 20%;
     overflow: hidden; /* Hide any overflowing content */
     background-color: #d9e2e6;
@@ -36,10 +36,8 @@
 
 /* Styles for additional signup text */
 .signup-text1 {
-    grid-column: -1 / 1; /* Span from second to third column from the end */
-    margin-right: 20px;
-    margin-top: -20px;
-    text-align: right; /* Right-align text */
+    grid-column: 1 /4; 
+    text-align: center;
 }
 
 .signup-text1 span {
@@ -64,7 +62,7 @@
 }
 
 /* Styles for the signup heading */
-.signup h1 {
+.signup-text h1 {
     margin-bottom: 20px; /* Add bottom margin to the heading */
     text-align: center; /* Center-align text */
     color: #3c79a7; /* Set text color */
