@@ -1,10 +1,14 @@
 /* Styles for the container element */
 .container {
-    max-width: 900px; /* Set maximum width for the container */
+    max-width: 500px; /* Set maximum width for the container */
+    height: 800px;
     margin: 0 auto; /* Center the container horizontally */
     padding: 40px; /* Add padding inside the container */
     margin-top: 10%; /* Set top margin as a percentage of the viewport height */
+    margin-bottom: 20%;
     overflow: hidden; /* Hide any overflowing content */
+    background-color: #d9e2e6;
+    color: rgb(158, 148, 148);
 }
 
 /* Styles for the password visibility icon */
@@ -25,22 +29,26 @@
 
 /* Styles for the main signup text */
 .signup-text {
-    margin-top: 30px; /* Add top margin */
+    color: rgb(243, 242, 242);
     grid-column: 1 / 4; /* Span across all three columns */
     text-align: center; /* Center-align text */
 }
 
 /* Styles for additional signup text */
 .signup-text1 {
-    grid-column: -1 / 3; /* Span from second to third column from the end */
+    grid-column: -1 / 1; /* Span from second to third column from the end */
+    margin-right: 20px;
+    margin-top: -20px;
     text-align: right; /* Right-align text */
 }
 
 .signup-text1 span {
-    color: #3c79a7; /* Set text color */
+    
     font-weight: 600; /* Set font weight to bold */
     cursor: pointer; /* Change cursor to pointer on hover */
 }
+
+
 
 /* Styles for the signup form section */
 .signup-form {
@@ -76,16 +84,18 @@
 
 .form-group label {
     display: block; /* Display labels as blocks */
+    margin-right: 300px;
     margin-bottom: 5px; /* Add bottom margin to labels */
-    font-weight: bold; /* Set font weight to bold for labels */
+    font-weight: normal; /* Set font weight to bold for labels */
 }
 
 /* Styles for form controls in the signup form */
 .form-control {
-    width: 40%; /* Set width of form controls */
-    padding: 8px; /* Add padding inside form controls */
-    font-size: 16px; /* Set font size */
-    border: 1px solid #ccc; /* Add border with color */
+    width: 90%; /* Set width of form controls */
+    padding: 10px 20px; /* Add padding inside form controls */
+    font-size:20px; /* Set font size */
+    margin-left: 10px;
+    border: 1px solid #4e4d4d; /* Add border with color */
     border-radius: 4px; /* Add border radius for rounded corners */
 }
 
@@ -97,8 +107,11 @@
 
 /* Styles for buttons in the signup form */
 .btn {
-    padding: 10px 20px; /* Set padding for buttons */
-    font-size: 16px; /* Set font size for buttons */
+    width: 90%;
+    padding: 15px 20px; /* Set padding for buttons */
+    font-size: 20px; /* Set font size for buttons */
+    margin-left: 20px;
+    margin-top: 10px; 
     border: none; /* Remove button borders */
     border-radius: 4px; /* Add border radius for rounded corners */
     cursor: pointer; /* Change cursor to pointer on hover */
@@ -106,12 +119,21 @@
 
 /* Styles for primary button in the signup form */
 .btn-primary {
-    background-color: #007bff; /* Set background color for primary button */
+    background-color: #28965f; /* Set background color for primary button */
     color: #fff; /* Set text color for primary button */
 }
 
 /* Styles for danger button in the signup form */
 .btn-danger {
-    background-color: #dc3545; /* Set background color for danger button */
+    margin-top: 10px;
+    background-color: #a80f0f; /* Set background color for danger button */
     color: #fff; /* Set text color for danger button */
+}
+
+.btn-primary:hover{
+   background-color: #127242;
+}
+
+.btn-danger:hover {
+  background-color: #7e0808;
 }

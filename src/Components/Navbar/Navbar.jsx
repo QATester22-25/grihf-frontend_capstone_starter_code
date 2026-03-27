@@ -8,10 +8,10 @@ const Navbar = () => {
         const navLinks = document.querySelector(".nav__links");
         const navIcon = document.querySelector(".nav__icon i");
   
-        // Toggle the 'active' class on the navigation links
+        
         navLinks.classList.toggle("active");
   
-        // Toggle the Font Awesome icons (bars and times)
+       
         if (navLinks.classList.contains("active")) {
           navIcon.classList.remove("fa-bars");
           navIcon.classList.add("fa-times");
@@ -30,7 +30,6 @@ const Navbar = () => {
       Stay Healthy
     </a>
 
-    <span></span>
   </div>
 
   <div class="nav__icon">
@@ -42,21 +41,21 @@ const Navbar = () => {
   <ul class="nav__links active">
 
     <li class="link">
-      <a href="../Landing_Page/LandingPage.html">Home</a>
+    <Link to="/">Home</Link>
     </li>
 
     <li class="link">
-      <a href="#">Appointments</a>
+    <Link to="/Appointments">Appointments</Link>
     </li>
 
-    <li class="btn">
+    <li class="link">
       <Link to="/SignUp">
-        <button class="btn1" onClick={handleClick}>SignUp</button>
+       SignUp
      </Link>
     </li>
-    <li class="btn">
+    <li class="link">
       <Link to="/Login" >
-        <button class="btn1" onClick={handleClick}>Login</button>
+       Login
       </Link>
     </li>
   </ul>
