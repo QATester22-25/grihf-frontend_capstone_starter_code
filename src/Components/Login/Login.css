@@ -1,19 +1,19 @@
-.container {
+.container1 {
     max-width: 500px; /* Set maximum width for the container */
-    height: 800px;
+    height: 750px;
     margin: 0 auto; /* Center the container horizontally */
     padding: 40px; /* Add padding inside the container */
     margin-top: 20%; /* Set top margin as a percentage of the viewport height */
     margin-bottom: 20%;
     overflow: hidden; /* Hide any overflowing content */
-    background-color: #d9e2e6;
-    color: rgb(158, 148, 148);
+    background-color: #156d92;
+    color: rgb(131, 125, 125);
+    border:  2px solid rgb(45, 75, 156);
 }
 
 
 /* Styles for form groups */
 .form-group {
-   
     margin-bottom: 20px; /* Bottom margin for spacing between form groups */
 }
 
@@ -33,21 +33,28 @@
     border-radius: 4px; /* Add border radius for rounded corners */
 }
 
+.login-grid {
+    display: grid; /* Use grid layout for the element */
+    grid-template-columns: 0.1fr 1.5fr 8fr; /* Define columns with fractional widths */
+    grid-gap: 10px; /* Set the gap between grid items */
+}
+
 .login-text{
   grid-column: 1 / 4; /* Span across all three columns */
-  text-align: center; /* Center-align text */
+  text-align: start; /* Center-align text */
+  margin-top: -50px;
 }
 
 .forgot-pass{
+    margin-top: 20px;
+    margin-left: 150px;
     cursor: pointer;
 }
 
 .login-text1{
-  grid-column: -1 / 1; /* Span from second to third column from the end */
-    margin-right: 20px;
-    margin-top: -20px;
-    margin-bottom: 150px;
-    text-align: right; /* Right-align text */
+  grid-column: -1 / 1; /* Span from second to third column from the end */ 
+    margin-bottom:70px;
+    text-align: center; 
 }
 
 .login-text h1 {
