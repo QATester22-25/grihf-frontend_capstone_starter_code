@@ -57,7 +57,7 @@ const SignUp = () => {
 
   // JSX to render the Sign Up form
   return (
-    <div className="container" style={{ marginTop: "5%" }}>
+    <div className="container1" style={{ marginTop: "5%" }}>
       <div className="signup-grid">
         <div className="signup-text">
           <h1>Sign Up</h1>

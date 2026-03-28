@@ -54,8 +54,8 @@ const Navbar = () => {
     <nav>
       <div className="nav__logo">
         <Link to="/">
-        StayHealthy <i style={{color:'#2190FF'}} className="fa fa-user-md"></i></Link>
-        <span>.</span>
+        StayHealthy</Link>
+        
       </div>
       <div className="nav__icon" onClick={handleClick}>
         <i className={click ? "fa fa-times" : "fa fa-bars"}></i>
@@ -86,12 +86,12 @@ const Navbar = () => {
   </>
 ) : (
           <>
-            <li className="link">
+            <li>
               <Link to="/signup">
                 <button className="btn1">Sign Up</button>
               </Link>
             </li>
-            <li className="link">
+            <li>
               <Link to="/login">
                 <button className="btn1">Login</button>
               </Link>

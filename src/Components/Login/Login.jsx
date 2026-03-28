@@ -38,18 +38,17 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container1" style={{ marginTop: "5%" }}>
       <div className="login-grid">
         <div className="login-text">
           <h1>Login</h1>
         </div>
-        <div className="login-text">
+        <div className="login-text1">
           Are you a new member?{" "}
           <span style={{ color: "#96a5b1" }}>
             <Link to="/SignUp">Sign Up Here</Link>
           </span>
         </div>
-        <br />
         <div className="login-form">
           <form onSubmit={handleLogin}>
             <div className="form-group">

@@ -8,7 +8,7 @@ import SignUp from './Components/SignUp/SignUp.jsx';
 function App() {
 
   return (
-    <div className="App">
+    
         <BrowserRouter>
             <Navbar/>
          <Routes>
@@ -18,7 +18,7 @@ function App() {
             <Route path="/LandingPage" element={<Landing_Page/>}/>
         </Routes>
         </BrowserRouter>
-    </div>
+    
   );
 }
 
