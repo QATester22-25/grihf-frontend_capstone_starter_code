@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -38,14 +39,17 @@ const Navbar = () => {
     const handleDropdown = () => {
       setShowDropdown(!showDropdown);
     }
-    useEffect(() => { 
-      const storedemail = sessionStorage.getItem("email");
+   useEffect(() => { 
+  const storedName = sessionStorage.getItem("name");
+  const storedEmail = sessionStorage.getItem("email");
 
-      if (storedemail) {
-            setIsLoggedIn(true);
-            setUsername(storedemail);
-          }
-        }, []);
+  if (storedName) {
+    setIsLoggedIn(true);
+    setUsername(storedName);
+    setEmail(storedEmail);
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
   return (
     <nav>
       <div className="nav__logo">
@@ -69,16 +73,18 @@ const Navbar = () => {
         <li className="link">
          <Link to="/reviews">Reviews</Link>
         </li>
-        {isLoggedIn?(
-          <>
-            <li className="link">
-              <button className="btn2" onClick={handleLogout}>
-                Logout
-              </button>
-            </li>
-            
-          </>
-        ) : (
+      {isLoggedIn ? (
+  <>
+    <li className="link username-display">
+      Hi, {username} {/* display username here */}
+    </li>
+    <li className="link">
+      <button className="btn2" onClick={handleLogout}>
+        Logout
+      </button>
+    </li>
+  </>
+) : (
           <>
             <li className="link">
               <Link to="/signup">
