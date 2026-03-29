@@ -17,7 +17,7 @@ const SignUp = () => {
   // Function to handle form submission
   const register = async (e) => {
     e.preventDefault(); // Prevent default form submission
-
+    console.log({ name, email, password, phone });
     // API Call to register user
     const response = await fetch(`${API_URL}/api/auth/register`, {
       method: "POST",
@@ -33,7 +33,7 @@ const SignUp = () => {
     });
 
     const json = await response.json(); // Parse the response JSON
-
+    console.log("RESPONSE:", json);
     if (json.authtoken) {
       // Store user data in session storage
       sessionStorage.setItem("auth-token", json.authtoken);
