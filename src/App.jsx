@@ -5,9 +5,9 @@ import Landing_Page from './Components/Landing_Page/Landing_Page';
 import Login from './Components/Login/Login.jsx';
 import SignUp from './Components/SignUp/SignUp.jsx';
 import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultationBooking/InstantConsultation.jsx';
-import FindDoctorSearchIC from './Components/InstantConsultationBooking/InstantConsultationBooking/FindDoctorSearchIC/FindDoctorSearchIC.jsx';
-import AppointmentFormIC from './Components/InstantConsultationBooking/InstantConsultationBooking/AppointmentFormIC/AppointmentFormIC.jsx';
-import DoctorCardIC from './Components/InstantConsultationBooking/InstantConsultationBooking/DoctorCardIC/DoctorCardIC.jsx';
+import FindDoctorSearch from './Components/FindDoctorSearch/FindDoctorSearch.jsx';
+import AppointmentForm from './Components/AppointmentForm/AppointmentForm.jsx';
+import DoctorCard from './Components/DoctorCard/DoctorCard.jsx';
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
             <Route path="/SignUp" element={<SignUp/>}/>
             <Route path="/LandingPage" element={<Landing_Page />} />
             <Route path="/instant-consultation" element={<InstantConsultation />} />
-            <Route path="/search/doctors" element={<FindDoctorSearchIC />} />
+            <Route path="/search/doctors" element={<FindDoctorSearch />} />
         </Routes>
         </BrowserRouter>
     
