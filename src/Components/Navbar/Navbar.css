@@ -109,6 +109,7 @@ nav {
   color: #f4f5f5;
   transition: 0.1s;
   text-decoration: none;
+  font-family: sans-serif;
 }
 
 /* Hover effect for individual links in the navigation */

@@ -12,10 +12,7 @@
 }
 
 
-/* Styles for form groups */
-.form-group {
-    margin-bottom: 20px; /* Bottom margin for spacing between form groups */
-}
+
 
 .form-group label {
     display: block; /* Display labels as blocks */
@@ -31,6 +28,7 @@
     margin-left: 20px;
     border: 1px solid #4e4d4d; /* Add border with color */
     border-radius: 4px; /* Add border radius for rounded corners */
+    margin-bottom: 10px;
 }
 
 .login-grid {
@@ -46,33 +44,36 @@
 }
 
 .forgot-pass{
-    margin-top: 20px;
-    margin-left: 150px;
+    margin-top: 10px;
+    text-align: center;
     cursor: pointer;
 }
 
 .login-text1{
   grid-column: -1 / 1; /* Span from second to third column from the end */ 
-    margin-bottom:70px;
+    margin-bottom:50px;
     text-align: center; 
+    margin-top: -20px;
 }
 
 .login-text h1 {
     margin-bottom: 20px; /* Add bottom margin to the heading */
     text-align: center; /* Center-align text */
-    color: #3c79a7; /* Set text color */
+    color: #b4cfe4; /* Set text color */
     letter-spacing: .1em; /* Add letter-spacing between characters */
+    font-family: sans-serif;
 }
 
-.login-text1 span {
+.login-text1 span a{
 
-    font-weight: 600; /* Set font weight to bold */
+    font-weight: normal; /* Set font weight to bold */
     cursor: pointer; /* Change cursor to pointer on hover */
+    color: white;
 }
 
 /* Styles for button groups */
 .btn-group {
-    margin-top: .0001px; /* Add a small top margin to button group */
+    margin-top: 10px; /* Add a small top margin to button group */
     margin-bottom: 20px; /* Add bottom margin to button group */
 }
 

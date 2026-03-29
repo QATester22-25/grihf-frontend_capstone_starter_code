@@ -7,9 +7,10 @@
     margin-top: 20%; /* Set top margin as a percentage of the viewport height */
     margin-bottom: 20%;
     overflow: hidden; /* Hide any overflowing content */
-    background-color: #d9e2e6;
+    background-color: #0e4892;
     color: rgb(158, 148, 148);
-}
+    border-radius: 10px;
+}   
 
 /* Styles for the password visibility icon */
 .password-visibility {
@@ -23,14 +24,12 @@
 /* Styles for the grid layout of the signup form */
 .signup-grid {
     display: grid; /* Use grid layout for the element */
-    grid-template-columns: 0.1fr 1.5fr 8fr; /* Define columns with fractional widths */
     grid-gap: 10px; /* Set the gap between grid items */
 }
 
 /* Styles for the main signup text */
 .signup-text {
     margin-top: -50px;
-    color: rgb(243, 242, 242);
     grid-column: 1 / 4; /* Span across all three columns */
     text-align:  start; /* Center-align text */
 }
@@ -40,20 +39,17 @@
     grid-column: 1 /4; 
     text-align: center;
     margin-top: -20px;
+    margin-bottom: 50px;
 }
 
-.signup-text1 span {
+.signup-text1 span a {
     
-    font-weight: 600; /* Set font weight to bold */
+    font-weight: normal; /* Set font weight to bold */
     cursor: pointer; /* Change cursor to pointer on hover */
+    color: white;
 }
 
 
-
-/* Styles for the signup form section */
-.signup-form {
-    grid-column: 2 / 4; /* Span from second to fourth column */
-}
 
 /* Styles for the overall signup container */
 .signup {
@@ -67,8 +63,9 @@
 .signup-text h1 {
     margin-bottom: 20px; /* Add bottom margin to the heading */
     text-align: center; /* Center-align text */
-    color: #3c79a7; /* Set text color */
+    color: #b4cfe4; /* Set text color */
     letter-spacing: .1em; /* Add letter-spacing between characters */
+    font-family: sans-serif;
 }
 
 /* Styles for the role text in signup */
@@ -79,7 +76,7 @@
 
 /* Styles for form groups in the signup form */
 .form-group {
-    margin-bottom: 30px; /* Add bottom margin to form groups */
+    margin-bottom: 10px; /* Add bottom margin to form groups */
 }
 
 .form-group label {
@@ -89,29 +86,27 @@
     font-weight: normal; /* Set font weight to bold for labels */
 }
 
+.pass{
+   transform: translateX(20px);
+}
 /* Styles for form controls in the signup form */
 .form-control {
     width: 90%; /* Set width of form controls */
     padding: 10px 20px; /* Add padding inside form controls */
     font-size:20px; /* Set font size */
-    margin-left: 10px;
     border: 1px solid #4e4d4d; /* Add border with color */
     border-radius: 4px; /* Add border radius for rounded corners */
+    margin-bottom: 5px;
 }
 
 /* Styles for button group in the signup form */
-.btn-group {
-    margin-top: 10px; /* Add a small top margin to button group */
-    margin-bottom: 20px; /* Add bottom margin to button group */
-}
+
 
 /* Styles for buttons in the signup form */
 .btn {
     width: 90%;
     padding: 15px 20px; /* Set padding for buttons */
     font-size: 20px; /* Set font size for buttons */
-    margin-left: 20px;
-    margin-top: 10px; 
     border: none; /* Remove button borders */
     border-radius: 4px; /* Add border radius for rounded corners */
     cursor: pointer; /* Change cursor to pointer on hover */
