@@ -119,7 +119,7 @@ const SignUp = () => {
                   {showerr}
                 </div>
               )}
-              <label htmlFor="password">Password</label>
+              <label className="pass" htmlFor="password">Password</label>
               <input
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
