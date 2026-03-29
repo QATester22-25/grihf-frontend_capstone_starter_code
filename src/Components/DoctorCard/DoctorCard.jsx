@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
-import "./DoctorCardIC.css";
-import AppointmentFormIC from "../AppointmentFormIC/AppointmentFormIC";
+import "./DoctorCard.css";
+import AppointmentForm from "../AppointmentForm/AppointmentForm";
 import { v4 as uuidv4 } from "uuid";
 
 const DoctorCardIC = ({
@@ -14,6 +15,7 @@ const DoctorCardIC = ({
 }) => {
   const [showModal, setShowModal] = useState(false);
   const [appointments, setAppointments] = useState([]);
+  const [appointmentDate, setAppointmentDate] = useState("");
 
   const handleBooking = () => {
     setShowModal(true);
@@ -41,10 +43,10 @@ const DoctorCardIC = ({
       <div className="doctor-card-details-container">
         <div className="doctor-card-profile-image-container">
           <img
-                    src="/public/doctor-icon-avatar-white_136162-58.avif"
-                    alt="Doctor"
-                    className="doctor-profile-image"
-                  />
+            src="/doctor-icon-avatar-white_136162-58.avif"
+            alt="Doctor"
+            className="doctor-profile-image"
+          />
         </div>
         <div className="doctor-card-details">
           <div className="doctor-card-detail-name">{name}</div>
@@ -92,7 +94,7 @@ const DoctorCardIC = ({
               <div>
                 <div className="doctor-card-profile-image-container">
                   <img
-                    src="/public/1690923295547doctor1.png"
+                    src="/1690923295547doctor1.png"
                     alt="Doctor"
                     className="doctor-profile-image"
                   />
@@ -110,22 +112,31 @@ const DoctorCardIC = ({
                   </div>
                 </div>
               </div>
+              <h3 style={{ textAlign: "center" }}>Appointment Booked!</h3>
 
               {appointments.length > 0 ? (
                 <>
-                  <h3 style={{ textAlign: "center" }}>Appointment Booked!</h3>
                   {appointments.map((appointment) => (
-                    <div className="bookedInfo" key={appointment.id}>
-                      <p>Name: {appointment.name}</p>
-                      <p>Phone Number: {appointment.phoneNumber}</p>
-                      <button onClick={() => handleCancel(appointment.id)}>
-                        Cancel Appointment
-                      </button>
-                    </div>
+                    <>
+                      <div className="bookedInfo" key={appointment.id}>
+                        <p>Name: {appointment.name}</p>
+                        <p>Phone Number: {appointment.phoneNumber}</p>
+                        <p>Date: {appointment.date}</p>
+                        <p>Time: {appointment.time}</p>
+                        <div
+                          style={{ textAlign: "center", marginBottom: "15px" }}
+                        >
+                         
+                        </div>
+                        <button onClick={() => handleCancel(appointment.id)}>
+                          Cancel Appointment
+                        </button>
+                      </div>
+                    </>
                   ))}
                 </>
               ) : (
-                <AppointmentFormIC
+                <AppointmentForm
                   doctorName={name}
                   doctorSpeciality={speciality}
                   onSubmit={handleFormSubmit}
