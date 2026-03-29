@@ -1,0 +1,45 @@
+/* Center container */
+.notification-container {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Card style */
+.appointment-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-left: 6px solid #28a745;
+  animation: slideIn 0.4s ease-in-out;
+}
+
+/* Title */
+.appointment-card__title {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #28a745;
+  text-align: center;
+}
+
+/* Text */
+.appointment-card p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
