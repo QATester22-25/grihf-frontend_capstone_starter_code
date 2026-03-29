@@ -4,7 +4,7 @@ import Navbar from './Components/Navbar/Navbar';
 import Landing_Page from './Components/Landing_Page/Landing_Page';
 import Login from './Components/Login/Login.jsx';
 import SignUp from './Components/SignUp/SignUp.jsx';
-import InstantConsultation  from './Components/InstantConsultationBooking';
+import InstantConsultation  from './Components/InstantConsultationBooking/InstantConsultation.jsx';
 
 function App() {
 
