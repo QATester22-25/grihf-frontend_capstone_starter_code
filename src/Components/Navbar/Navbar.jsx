@@ -76,10 +76,10 @@ const Navbar = () => {
       {isLoggedIn ? (
   <>
     <li className="link username-display">
-      Hi, {username} {/* display username here */}
+      Hi, {username} 
     </li>
     <li className="link">
-      <button className="btn2" onClick={handleLogout}>
+      <button className="btn1" onClick={handleLogout}>
         Logout
       </button>
     </li>
