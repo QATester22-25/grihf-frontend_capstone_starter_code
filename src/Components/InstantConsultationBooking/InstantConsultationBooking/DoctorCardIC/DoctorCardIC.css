@@ -61,8 +61,8 @@
     
   }
   
-  .book-appoinment-btn {
-    background-color: #3498db;
+  .book-appointment-btn {
+    background-color: #115e37;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -71,6 +71,9 @@
     cursor: pointer;
   }
   
+  .book-appointment-btn:hover {
+    background-color: #073f23;
+  }
   .book-appoinment-btn div:nth-child(2) {
     font-size: 12px;
     font-weight: bold;
@@ -123,13 +126,13 @@
 
 }
 .modal-btn:hover {
-  background-color: #0d8af5;
+  background-color: #156e24;
 }
 
-.cancel-appointment-btn {
+.cancel-appointment {
   display: inline-block;
   padding: 8px 16px;
-  background-color: #f44336;
+  background-color: #d4271b;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -137,8 +140,8 @@
   transition: background-color 0.3s ease;
 }
 
-.cancel-appointment-btn:hover {
-  background-color: #d63027;
+.cancel-appointment:hover {
+  background-color: #881711;
 }
 .appointment-form {
   max-width: 400px;
