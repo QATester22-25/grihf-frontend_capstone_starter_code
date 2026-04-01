@@ -5,11 +5,13 @@ import Navbar from './Components/Navbar/Navbar';
 import Landing_Page from './Components/Landing_Page/Landing_Page';
 import Login from './Components/Login/Login.jsx';
 import SignUp from './Components/SignUp/SignUp.jsx';
-import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultationBooking/InstantConsultation.jsx';
+import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultation.jsx';
 import FindDoctorSearch from './Components/FindDoctorSearch/FindDoctorSearch.jsx';
-import DoctorCardIC from './Components/DoctorCard/DoctorCard.jsx';
+import DoctorCard from './Components/DoctorCard/DoctorCard.jsx';
 import{ Notification} from "./Components/Notification/Notification.jsx";
 import ReviewForm from './Components/ReviewForm/ReviewForm.jsx';
+import GiveReviews from './Components/Review/Review.jsx';
+
 
 function App() {
   const [latestAppointment, setLatestAppointment] = useState(null);
@@ -25,8 +27,9 @@ function App() {
             <Route path="/LandingPage" element={<Landing_Page />} />
             <Route path="/instant-consultation" element={<InstantConsultation />} />
             <Route path="/search/doctors" element={<FindDoctorSearch />} />
-            <Route path="/doctor/:id" element={<DoctorCardIC />} />
+            <Route path="/doctor/:id" element={<DoctorCard />} />
             <Route path="/reviews" element={<ReviewForm />} />
+            <Route path='/GiveReviews' element={<GiveReviews />} />
           </Routes>
         </BrowserRouter>
     
