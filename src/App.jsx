@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './Components/Navbar/Navbar';
@@ -8,15 +9,15 @@ import InstantConsultation from './Components/InstantConsultationBooking/Instant
 import FindDoctorSearch from './Components/FindDoctorSearch/FindDoctorSearch.jsx';
 import DoctorCardIC from './Components/DoctorCard/DoctorCard.jsx';
 import{ Notification} from "./Components/Notification/Notification.jsx";
-
+import ReviewForm from './Components/ReviewForm/ReviewForm.jsx';
 
 function App() {
   const [latestAppointment, setLatestAppointment] = useState(null);
   return (
     
         <BrowserRouter>
-      <Navbar />
-      <Notification latestAppointment={latestAppointment} />
+           <Navbar />
+           <Notification latestAppointment={latestAppointment} />
          <Routes>
             <Route path="/" element={<Landing_Page/>}/>
             <Route path="/Login" element={<Login/>}/>
@@ -24,8 +25,9 @@ function App() {
             <Route path="/LandingPage" element={<Landing_Page />} />
             <Route path="/instant-consultation" element={<InstantConsultation />} />
             <Route path="/search/doctors" element={<FindDoctorSearch />} />
-           
-        </Routes>
+            <Route path="/doctor/:id" element={<DoctorCardIC />} />
+            <Route path="/reviews" element={<ReviewForm />} />
+          </Routes>
         </BrowserRouter>
     
   );
