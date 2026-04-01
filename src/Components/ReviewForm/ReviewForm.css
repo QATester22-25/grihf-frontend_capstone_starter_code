@@ -127,7 +127,7 @@
 }
 
 .review-card__star:focus {
-  outline: 2px solid #007bff;
+  outline: 1px solid #eeec69;
   outline-offset: 2px;
   background: transparent;
 }
@@ -211,7 +211,7 @@
 }
 
 .review-card__modal-content {
-  background: #9dd4d6;
+  background: #c3d8e6;
   border-radius: 10px;
   width: min(560px, 95%);
   max-height: 90vh;
