@@ -11,7 +11,7 @@ import DoctorCard from './Components/DoctorCard/DoctorCard.jsx';
 import{ Notification} from "./Components/Notification/Notification.jsx";
 import ReviewForm from './Components/ReviewForm/ReviewForm.jsx';
 import GiveReviews from './Components/Review/Review.jsx';
-
+import ReportsLayout from './Components/ReportsLayout/ReportsLayout';
 
 function App() {
   const [latestAppointment, setLatestAppointment] = useState(null);
@@ -30,6 +30,7 @@ function App() {
             <Route path="/doctor/:id" element={<DoctorCard />} />
             <Route path="/reviews" element={<ReviewForm />} />
             <Route path='/GiveReviews' element={<GiveReviews />} />
+            <Route path="/reports" element={<ReportsLayout />} />
           </Routes>
         </BrowserRouter>
     

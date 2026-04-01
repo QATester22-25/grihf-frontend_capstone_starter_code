@@ -12,10 +12,36 @@ const ReviewForm = () => {
   const [rating, setRating] = useState(0);
   const [formStatus, setFormStatus] = useState('');
 
-  const activeDoctor = reviews.find((item, index) => (item.id ?? index + 1) === activeDoctorId);
+  const getPersistedReviews = () => {
+    try {
+      return JSON.parse(localStorage.getItem('reviewFormDataMap') || '{}');
+    } catch (e) {
+      console.error('Failed to parse persisted review data', e);
+      return {};
+    }
+  };
+
+  const activeDoctor = reviews.find((item) => item.id === activeDoctorId);
   const activeDoctorName = activeDoctor?.doctor || activeDoctor?.doctorName || activeDoctor?.name || 'Selected Doctor';
 
   useEffect(() => {
+    const onReviewDataCleared = (event) => {
+      const id = event?.detail?.id;
+      if (id == null) return;
+      setReviews((prev) =>
+        prev.map((item) => {
+          if (item.id !== id) return item;
+          const updated = { ...item };
+          delete updated.review;
+          delete updated.comment;
+          delete updated.rating;
+          return updated;
+        })
+      );
+    };
+
+    window.addEventListener('reviewDataCleared', onReviewDataCleared);
+
     const fetchReviews = async () => {
       try {
         const res = await fetch('https://api.npoint.io/9a5543d36f1460da2f63');
@@ -25,7 +51,15 @@ const ReviewForm = () => {
         const data = await res.json();
         // support array or object data
         const loaded = Array.isArray(data) ? data : data.reviews || [];
-        setReviews(loaded);
+
+        const persisted = getPersistedReviews();
+        const merged = loaded.map((item, index) => {
+          const id = item.id ?? index + 1;
+          const base = { ...item, id };
+          return persisted[id] ? { ...base, ...persisted[id] } : base;
+        });
+
+        setReviews(merged);
       } catch (err) {
         setError('Unable to fetch review data');
         console.error(err);
@@ -35,6 +69,10 @@ const ReviewForm = () => {
     };
 
     fetchReviews();
+
+    return () => {
+      window.removeEventListener('reviewDataCleared', onReviewDataCleared);
+    };
   }, []);
 
   useEffect(() => {
@@ -97,7 +135,7 @@ const ReviewForm = () => {
                       disabled={Boolean(item.review || item.comment)}
                       onClick={() => {
                         if (item.review || item.comment) return;
-                        setActiveDoctorId(item.id ?? index + 1);
+                        setActiveDoctorId(item.id);
                         setReviewerName('');
                         setReviewText(item.review || item.comment || '');
                         setRating(item.rating ?? 0);
@@ -160,13 +198,19 @@ const ReviewForm = () => {
                   return;
                 }
 
-                setReviews((prev) =>
-                  prev.map((item, index) => {
+                setReviews((prev) => {
+                  const updated = prev.map((item, index) => {
                     const id = item.id ?? index + 1;
                     if (id !== activeDoctorId) return item;
                     return { ...item, review: reviewText, rating };
-                  })
-                );
+                  });
+
+                  const persisted = getPersistedReviews();
+                  persisted[activeDoctorId] = { review: reviewText, rating };
+                  localStorage.setItem('reviewFormDataMap', JSON.stringify(persisted));
+
+                  return updated;
+                });
 
                 setFormStatus(`Review for ${activeDoctorName} submitted successfully!`);
                 setReviewerName('');
