@@ -35,6 +35,58 @@ nav {
   cursor: pointer;
 }
 
+.profile-dropdown-wrapper {
+  position: relative;
+}
+
+.profile-dropdown-btn {
+  background: transparent;
+  border: 1px dashed rgba(255,255,255,0.9);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.profile-dropdown-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.username-display {
+  margin: 0;
+}
+
+.profile-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: -40px;
+  background: #fff;
+  border: 1px solid #d7e7f2;
+  border-radius: 8px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+  padding: 8px;
+  min-width: 260px;
+  z-index: 999;
+}
+
+.profile-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-dropdown-menu a {
+  color: #2d6daa;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  padding: 6px;
+}
+
+.profile-dropdown-menu a:hover {
+  background: #f1f1f1;
+}
+
 /* Display dropdown menu on hover */
 .welcome-user:hover .dropdown-menu {
   display: block;

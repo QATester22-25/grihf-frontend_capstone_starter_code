@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ProfileCard from "../ProfileCard/ProfileCard";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -9,6 +10,7 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
   const handleClick = () => setClick(!click);
 
@@ -43,6 +45,7 @@ const Navbar = () => {
       setIsLoggedIn(true);
       setUsername(storedName);
       setEmail(storedEmail);
+      setPhone(sessionStorage.getItem("phone") || "");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -69,7 +72,16 @@ const Navbar = () => {
         </li>
         {isLoggedIn ? (
           <>
-            <li className="link username-display">Hi, {username}</li>
+            <li className="link profile-dropdown-wrapper">
+              <button className="profile-dropdown-btn username-display" onClick={handleDropdown} type="button">
+                Hi, {username}
+              </button>
+              {showDropdown && (
+                <div className="profile-dropdown-menu">
+                  <ProfileCard name={username} email={email} phone={phone} />
+                </div>
+              )}
+            </li>
             <li className="link">
               <button className="btn1" onClick={handleLogout}>
                 Logout
