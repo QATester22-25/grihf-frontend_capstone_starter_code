@@ -59,8 +59,8 @@ nav {
 
 .profile-dropdown-menu {
   position: absolute;
-  top: calc(100% + 4px);
-  left: -40px;
+  top: calc(100% + 15px);
+  left: -75px;
   background: #fff;
   border: 1px solid #d7e7f2;
   border-radius: 8px;
