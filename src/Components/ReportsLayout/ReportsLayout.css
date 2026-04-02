@@ -1,0 +1,137 @@
+.reports-layout {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #d7e7f2;
+  border-radius: 10px;
+  padding: 14px;
+  color: #1f3b59;
+  box-shadow: 0 8px 20px rgba(16, 61, 96, 0.12);
+}
+
+.reports-layout-center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reports-layout__error {
+  color: #c82333;
+  font-weight: 600;
+}
+
+.reports-layout h3 {
+  margin: 0 0 12px;
+  font-size: 1.2rem;
+}
+
+.reports-layout__table-wrap {
+  overflow-x: auto;
+}
+
+.reports-layout__table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.reports-layout__table th,
+.reports-layout__table td {
+  border: 1px solid #e1e9f1;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+.reports-layout__table th {
+  background: #f1f1f1;
+  color: #2e3f51;
+}
+
+.report-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 12px;
+  cursor: pointer;
+}
+
+.report-btn-download {
+  background-color: #0056b3;
+}
+
+.reports-layout__no-data {
+  text-align: center;
+  color: #6c7786;
+  padding: 16px;
+}
+
+.reports-layout__details {
+  margin-top: 16px;
+  padding: 12px;
+  border: 1px solid #d7e7f2;
+  border-radius: 8px;
+  background: #f8fbff;
+}
+
+.reports-layout__details h4 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+.reports-layout__details p {
+  margin: 6px 0;
+  color: #2e3f51;
+}
+
+.reports-layout__close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 50px;
+  height: 50px;
+  background: #d9534f;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.reports-layout__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.reports-layout__right-label {
+  font-size: 0.9rem;
+  color: #c82333;
+  font-weight: 600;
+}
+
+.reports-layout__details {
+  position: relative;
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid #d7e7f2;
+  border-radius: 8px;
+  background: #f8fbff;
+}
+
+.report-btn-delete {
+  background-color: #d9534f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 12px;
+  cursor: pointer;
+}
+

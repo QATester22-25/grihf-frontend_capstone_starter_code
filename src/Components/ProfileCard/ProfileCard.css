@@ -1,0 +1,108 @@
+.profile-card {
+  width: 100%;
+  max-width: 320px;
+  background: #ffffff;
+  border: 1px solid #d7e7f2;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(16, 61, 96, 0.12);
+  padding: 16px;
+  color: #1f3b59;
+}
+
+.profile-card__header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.profile-card__avatar--centered {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background-color: #2d6daa;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.profile-card__header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.profile-card__header p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #56718d;
+}
+
+.profile-card__body {
+  border-top: 1px solid #e6ecf2;
+  padding-top: 10px;
+}
+
+.profile-card__body p {
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.profile-card__label {
+  font-weight: 700;
+  color: #2d6daa;
+  min-width: 60px;
+  text-align: left;
+}
+
+
+.profile-card__edit-btn,
+.profile-card__update-btn,
+.profile-card__cancel-btn {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.profile-card__edit-btn {
+  background: #2d6daa;
+  color: #fff;
+}
+
+.profile-card__update-btn {
+  background: #198754;
+  color: #fff;
+}
+
+.profile-card__cancel-btn {
+  background: #6c757d;
+  color: #fff;
+}
+
+.profile-card__edit-form label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.profile-card__edit-form input {
+  width: 100%;
+  border: 1px solid #c5d7e8;
+  border-radius: 6px;
+  padding: 8px;
+  margin-top: 4px;
+}
+
+.profile-card__status {
+  margin-top: 10px;
+  color: #2c7a4b;
+  font-weight: 600;
+}

@@ -1,0 +1,248 @@
+.review-card {
+  max-width: 900px;
+  margin: 100px auto;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+}
+
+.review-card h2 {
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-family: sans-serif;
+  text-align: left;
+}
+
+.review-card__table-wrapper {
+  overflow-x: auto;
+}
+
+.review-card__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.review-card__table th,
+.review-card__table td {
+  border: 1px solid #ddd;
+  padding: 12px 10px;
+  text-align: left;
+}
+
+.review-card__table th {
+  background: #75c4f8;
+  font-weight: 700;
+}
+
+.review-card__button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.review-card__button:hover {
+  background-color: #0056b3;
+}
+
+.review-card__button.disabled,
+.review-card__button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  color: #f5f5f5;
+}
+
+.review-card__feedback-form {
+  margin-top: 16px;
+  border-top: 1px solid #e8e8e8;
+  padding-top: 16px;
+}
+
+.review-card__feedback-form h3 {
+  margin-bottom: 12px;
+}
+
+.review-card__feedback-form label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-bottom: 12px;
+  font-weight: 600;
+  width: 100%;
+}
+
+.review-card__feedback-form label span {
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.review-card__feedback-form input,
+.review-card__feedback-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.review-card__rating-label {
+  margin-bottom: 12px;
+  display: block;
+  font-weight: 600;
+}
+
+.review-card__stars {
+  margin-top: 6px;
+  display: inline-flex;
+  gap: 8px;
+}
+
+.review-card__star {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  padding: 0;
+  line-height: 1;
+  -webkit-appearance: none;
+}
+
+.review-card__star:hover {
+  color: #ffc107;
+  background: transparent;
+}
+
+.review-card__star.selected {
+  color: #ffc107;
+}
+
+.review-card__star:focus {
+  outline: 1px solid #eeec69;
+  outline-offset: 2px;
+  background: transparent;
+}
+
+.review-card__feedback-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.review-card__submit-button {
+  background-color: #198754;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.review-card__submit-button:hover {
+  background-color: #146c43;
+}
+
+.review-card__status {
+  margin-top: 10px;
+  color: #444;
+  font-weight: 600;
+}
+
+.review-card__review-text {
+  display: inline-block;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: default;
+  position: relative;
+}
+
+.review-card__review-text[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  width: max-content;
+  max-width: 320px;
+  white-space: normal;
+  left: 50%;
+  top: calc(100% + 8px);
+  transform: translateX(-50%);
+  z-index: 1001;
+  background: rgba(0, 123, 255, 0.95);
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  line-height: 1.4;
+}
+
+.review-card__review-text[data-tooltip]:hover::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: rgba(0, 123, 255, 0.95);
+  z-index: 1001;
+}
+
+.review-card__modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.review-card__modal-content {
+  background: #c3d8e6;
+  border-radius: 10px;
+  width: min(560px, 95%);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 20px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.review-card__close {
+  position: absolute;
+  top: 0px;
+  right: 8px;
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  line-height: 1;
+  cursor: pointer;
+  font-weight: 700;
+  color: #f30808;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.review-card__close:hover {
+  background-color: transparent;
+  color: #b40606;
+}
+.review-card__feedback-form {
+  margin-top: 10px;
+}
+

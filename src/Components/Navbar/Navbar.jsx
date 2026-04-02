@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import ProfileCard from "../ProfileCard/ProfileCard";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -9,7 +10,11 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
+  const [activeDropdownView, setActiveDropdownView] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation();
   const handleClick = () => setClick(!click);
 
   const handleLogout = () => {
@@ -23,6 +28,7 @@ const Navbar = () => {
     // setUsername("");
 
     // Remove the reviewFormData from local storage
+    localStorage.removeItem('reviewFormDataMap');
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
       if (key.startsWith("reviewFormData_")) {
@@ -34,6 +40,9 @@ const Navbar = () => {
   };
   const handleDropdown = () => {
     setShowDropdown(!showDropdown);
+    if (showDropdown) {
+      setActiveDropdownView(null);
+    }
   };
   useEffect(() => {
     const storedName = sessionStorage.getItem("name");
@@ -43,9 +52,16 @@ const Navbar = () => {
       setIsLoggedIn(true);
       setUsername(storedName);
       setEmail(storedEmail);
+      setPhone(sessionStorage.getItem("phone") || "");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    // On route change, hide dropdown content to avoid stale UI.
+    setActiveDropdownView(null);
+    setShowDropdown(false);
+  }, [location]);
   return (
     <nav>
       <div className="nav__logo">
@@ -69,7 +85,42 @@ const Navbar = () => {
         </li>
         {isLoggedIn ? (
           <>
-            <li className="link username-display">Hi, {username}</li>
+            <li className="link profile-dropdown-wrapper">
+              <button className="profile-dropdown-btn username-display" onClick={handleDropdown} type="button">
+                Hi, {username}
+              </button>
+
+              {showDropdown && (
+                <div className="profile-dropdown-menu">
+                  <div className="profile-dropdown-tabs">
+                    <button
+                      type="button"
+                      className={activeDropdownView === 'profile' ? 'active' : ''}
+                      onClick={() => setActiveDropdownView('profile')}
+                    >
+                      Your Profile
+                    </button>
+                    <button
+                      type="button"
+                      className={activeDropdownView === 'reports' ? 'active' : ''}
+                      onClick={() => {
+                        setActiveDropdownView('reports');
+                        setShowDropdown(false);
+                        navigate('/reports');
+                      }}
+                    >
+                      Your Reports
+                    </button>
+                  </div>
+
+                  <div className="profile-dropdown-content">
+                    {activeDropdownView === 'profile' && (
+                      <ProfileCard name={username} email={email} phone={phone} />
+                    )}
+                  </div>
+                </div>
+              )}
+            </li>
             <li className="link">
               <button className="btn1" onClick={handleLogout}>
                 Logout
@@ -91,6 +142,7 @@ const Navbar = () => {
           </>
         )}
       </ul>
+
     </nav>
   );
 };

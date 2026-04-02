@@ -35,6 +35,99 @@ nav {
   cursor: pointer;
 }
 
+.profile-dropdown-wrapper {
+  position: relative;
+}
+
+.profile-dropdown-btn {
+  background: transparent;
+  border: 1px dashed rgba(255,255,255,0.9);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.profile-dropdown-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.username-display {
+  margin: 0;
+}
+
+.profile-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: -40px;
+  background: #fff;
+  border: 1px solid #d7e7f2;
+  border-radius: 8px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+  padding: 8px;
+  min-width: 280px;
+  z-index: 999;
+}
+
+.profile-dropdown-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.profile-dropdown-tabs button {
+  flex: 1;
+  border: 1px solid #d7e7f2;
+  background: #f6f8fb;
+  color: #333;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.profile-dropdown-tabs button.active {
+  background: #2d6daa;
+  border-color: #2d6daa;
+  color: #fff;
+}
+
+.profile-dropdown-content {
+  max-height: 400px;
+  overflow: auto;
+}
+
+.reports-center-wrap {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.reports-center-wrap > * {
+  pointer-events: all;
+}
+.profile-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-dropdown-menu a {
+  color: #2d6daa;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  padding: 6px;
+}
+
+.profile-dropdown-menu a:hover {
+  background: #f1f1f1;
+}
+
 /* Display dropdown menu on hover */
 .welcome-user:hover .dropdown-menu {
   display: block;
