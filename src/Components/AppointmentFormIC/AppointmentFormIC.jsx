@@ -20,40 +20,10 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
         <label>Name:</label>
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
       </div>
-
       <div>
         <label>Phone Number:</label>
         <input type="text" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
       </div>
-
-      <div>
-        <label>Date of Appointment:</label>
-        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required min={new Date().toISOString().split("T")[0]} />
-      </div>
-
-      {date && (
-        <div>
-          <label>Select Time:</label>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginTop: "5px" }}>
-            {timeSlots.map((slot) => (
-              <button
-                type="button"
-                key={slot}
-                onClick={() => setTime(slot)}
-                style={{
-                  padding: "8px",
-                  border: time === slot ? "2px solid green" : "1px solid gray",
-                  backgroundColor: time === slot ? "#d4edda" : "white",
-                  cursor: "pointer",
-                }}
-              >
-                {slot}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-
       <div style={{ marginTop: "10px" }}>
         <button type="submit" disabled={!time}>
           Book Now
