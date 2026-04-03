@@ -1,9 +1,6 @@
-// Following code has been commented with appropriate comments for your reference.
 import React, { useState } from 'react';
 
-// Function component for giving reviews
 function GiveReviews() {
-  // State variables using useState hook
   const [showForm, setShowForm] = useState(false);
   const [submittedMessage, setSubmittedMessage] = useState('');
   const [showWarning, setShowWarning] = useState(false);
@@ -12,30 +9,22 @@ function GiveReviews() {
     review: '',
     rating: 0
   });
+  const [isSubmitted, setIsSubmitted] = useState(false); // Nouveau state pour désactiver le bouton
 
-  // Function to handle button click event
   const handleButtonClick = () => {
     setShowForm(true);
   };
 
-  // Function to handle form input changes
   const handleChange = (e) => {
-    // Update the form data based on user input
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmittedMessage(formData);
-    setFormData({
-      name: '',
-      review: '',
-      rating: 0
-    });
-    // Check if all required fields are filled before submission
     if (formData.name && formData.review && formData.rating > 0) {
+      setSubmittedMessage(`Name: ${formData.name}, Review: ${formData.review}, Rating: ${formData.rating}`);
       setShowWarning(false);
+      setIsSubmitted(true); // Désactive le bouton après soumission
     } else {
       setShowWarning(true);
     }
@@ -45,13 +34,10 @@ function GiveReviews() {
     <div>
       <h2>Form with Message</h2>
       {!showForm ? (
-        // Display button to open the form
         <button onClick={handleButtonClick}>Open Form</button>
       ) : (
-        // Display form for giving feedback
         <form onSubmit={handleSubmit}>
           <h2>Give Your Feedback</h2>
-          {/* Display warning message if not all fields are filled */}
           {showWarning && <p className="warning">Please fill out all fields.</p>}
           <div>
             <label htmlFor="name">Name:</label>
@@ -61,11 +47,21 @@ function GiveReviews() {
             <label htmlFor="review">Review:</label>
             <textarea id="review" name="review" value={formData.review} onChange={handleChange} />
           </div>
-          {/* Submit button for form submission */}
-          <button type="submit">Submit</button>
+          {/* Sélecteur de rating ajouté */}
+          <div>
+            <label htmlFor="rating">Rating:</label>
+            <select id="rating" name="rating" value={formData.rating} onChange={handleChange}>
+              <option value={0}>Select rating</option>
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option value={5}>5</option>
+            </select>
+          </div>
+          <button type="submit" disabled={isSubmitted}>Submit</button> {/* Désactivation du bouton après soumission */}
         </form>
       )}
-      {/* Display the submitted message if available */}
       {submittedMessage && (
         <div>
           <h3>Submitted Message:</h3>
