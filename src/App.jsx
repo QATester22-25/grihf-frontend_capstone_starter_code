@@ -20,6 +20,7 @@ function App() {
         <BrowserRouter>
            <Navbar />
            <Notification latestAppointment={latestAppointment} />
+          <Route path="/notification" element={<Notification />} />
          <Routes>
             <Route path="/" element={<Landing_Page/>}/>
             <Route path="/Login" element={<Login/>}/>
@@ -31,7 +32,7 @@ function App() {
             <Route path="/reviews" element={<ReviewForm />} />
             <Route path='/GiveReviews' element={<GiveReviews />} />
             <Route path="/reports" element={<ReportsLayout />} />
-            <Route path="/notification" element={<Notification />} />
+            
           </Routes>
         </BrowserRouter>
     
