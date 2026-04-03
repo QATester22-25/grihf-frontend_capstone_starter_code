@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import "./DoctorCard.css";
-import AppointmentForm from "../AppointmentForm/AppointmentForm";
+import AppointmentForm from "../AppointmentFormIC/AppointmentFormIC";
 import { v4 as uuidv4 } from "uuid";
 
 const DoctorCardIC = ({ name, speciality, experience, ratings, setLatestAppointment }) => {
