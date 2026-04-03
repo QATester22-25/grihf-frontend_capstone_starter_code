@@ -10,7 +10,7 @@ import FindDoctorSearch from './Components/FindDoctorSearch/FindDoctorSearch.jsx
 import DoctorCard from './Components/DoctorCard/DoctorCard.jsx';
 import{ Notification} from "./Components/Notification/Notification.jsx";
 import ReviewForm from './Components/ReviewForm/ReviewForm.jsx';
-import GiveReviews from './Components/Review/Review.jsx';
+import GiveReviews from './Components/GiveReviews/GiveReviews.jsx';
 import ReportsLayout from './Components/ReportsLayout/ReportsLayout';
 
 function App() {
